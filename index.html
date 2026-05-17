@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sture — Mission-to-Machine for Autonomous Mobile Machines</title>
+  <meta name="description" content="Sture is a validation and coordination layer for teams building drones, ground robots, and autonomous watercraft. Building from Brisbane, AUKUS Pillar 2." />
+  <meta name="theme-color" content="#0a0e14" />
+  <meta name="author" content="Leva Nu Pty Ltd" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Sture — Mission-to-Machine for Autonomous Mobile Machines" />
+  <meta property="og:description" content="A validation and coordination layer for teams building drones, ground robots, and autonomous watercraft. Building from Brisbane, AUKUS Pillar 2." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sture.io" />
+  <meta property="og:image" content="https://sture.io/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="Sture" />
+  <meta property="og:locale" content="en_AU" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Sture — Mission-to-Machine for Autonomous Mobile Machines" />
+  <meta name="twitter:description" content="A validation and coordination layer for teams building drones, ground robots, and autonomous watercraft." />
+  <meta name="twitter:image" content="https://sture.io/og.png" />
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="canonical" href="https://sture.io" />
+
+  <style>
+    :root {
+      --bg: #0a0e14;
+      --text: #e6e8ec;
+      --text-muted: #8b929c;
+      --text-faint: #5a626c;
+      --accent: #7fb8d4;
+      --border: #1d2530;
+      --max-width: 1360px;
+      --text-width: 680px;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    
+    html {
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      font-size: 17px;
+      line-height: 1.65;
+      color: var(--text);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s ease;
+    }
+
+    a:hover {
+      border-bottom-color: var(--accent);
+    }
+
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 96px 32px 64px;
+    }
+
+    section {
+      margin-bottom: 96px;
+    }
+
+    section:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Hero */
+    .hero {
+      margin-bottom: 128px;
+    }
+
+    .brand {
+      margin-bottom: 48px;
+    }
+
+    .brand img {
+      display: block;
+      height: 48px;
+      width: auto;
+    }
+
+    .hero-image {
+      display: block;
+      width: 100vw;
+      height: auto;
+      margin: 0 0 48px 50%;
+      transform: translateX(-50%);
+    }
+
+    .hero h1 {
+      font-size: clamp(32px, 4vw, 52px);
+      line-height: 1.1;
+      font-weight: 700;
+      letter-spacing: -0.035em;
+      color: #ffffff;
+      margin: 0 0 32px;
+    }
+
+    .hero .tagline {
+      font-size: clamp(18px, 1.6vw, 22px);
+      line-height: 1.55;
+      color: var(--text-muted);
+      margin: 0 0 32px;
+      max-width: var(--text-width);
+    }
+
+    .hero .meta {
+      font-size: 13px;
+      color: var(--text-faint);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    /* Sections */
+    section h2 {
+      font-size: clamp(28px, 3.5vw, 40px);
+      line-height: 1.25;
+      font-weight: 600;
+      letter-spacing: -0.015em;
+      color: #ffffff;
+      margin: 0 0 24px;
+      max-width: 900px;
+    }
+
+    section p {
+      margin: 0 0 20px;
+      max-width: var(--text-width);
+    }
+
+    section p:last-of-type {
+      margin-bottom: 0;
+    }
+
+    /* Benefits list */
+    .benefits-label {
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-faint);
+      margin: 40px 0 8px;
+    }
+
+    .benefits {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px 32px;
+    }
+
+    .benefits li {
+      padding: 28px 0 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .benefits li strong {
+      display: block;
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .benefits .num {
+      color: var(--accent);
+      font-size: 12px;
+      font-variant-numeric: tabular-nums;
+      letter-spacing: 0.12em;
+      margin-right: 14px;
+      font-weight: 500;
+    }
+
+    .benefits li p {
+      margin: 0;
+      color: var(--text-muted);
+      font-size: 16px;
+      line-height: 1.6;
+      max-width: none;
+    }
+
+    @media (max-width: 900px) {
+      .benefits {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      .benefits li {
+        padding: 28px 0;
+      }
+
+      .arch-flow {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .arch-card {
+        min-height: 0;
+      }
+
+      .arch-step:not(:last-child) .arch-card::after {
+        content: "↓";
+        right: 50%;
+        top: auto;
+        bottom: -30px;
+        transform: translateX(50%);
+        font-size: 16px;
+      }
+
+      .arch-feedback {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        text-align: center;
+      }
+
+      .arch-feedback__line {
+        width: 100%;
+      }
+
+      .arch-feedback__label {
+        white-space: normal;
+      }
+
+      .problem-graph__svg {
+        display: none;
+      }
+
+      .problem-graph__mobile {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 14px;
+        max-width: 320px;
+        margin: 0 auto;
+      }
+
+      .problem-graph__mobile-change {
+        border: 1.5px solid var(--accent);
+        padding: 16px 20px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .problem-graph__mobile-kicker {
+        font-size: 11px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--accent);
+        font-weight: 500;
+      }
+
+      .problem-graph__mobile-title {
+        font-size: 18px;
+        font-weight: 600;
+        color: #ffffff;
+      }
+
+      .problem-graph__mobile-arrow {
+        text-align: center;
+        color: var(--text-faint);
+        font-size: 20px;
+        line-height: 1;
+      }
+
+      .problem-graph__mobile-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        border: 1px solid var(--border);
+      }
+
+      .problem-graph__mobile-list li {
+        padding: 14px 20px;
+        color: var(--text-muted);
+        font-size: 14px;
+        text-align: center;
+      }
+
+      .problem-graph__mobile-list li + li {
+        border-top: 1px solid var(--border);
+      }
+    }
+
+    /* Architecture diagram */
+    .arch-diagram {
+      margin: 36px 0 32px;
+    }
+
+    .arch-flow {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 56px;
+    }
+
+    .arch-step {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .arch-card {
+      border: 1px solid var(--border);
+      padding: 22px 22px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      min-height: 168px;
+      position: relative;
+    }
+
+    .arch-step--emphasis .arch-card {
+      border-color: var(--text-muted);
+    }
+
+    .arch-step:not(:last-child) .arch-card::after {
+      content: "→";
+      position: absolute;
+      right: -38px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-faint);
+      font-size: 18px;
+      line-height: 1;
+    }
+
+    .arch-card__kicker {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-faint);
+      font-weight: 500;
+    }
+
+    .arch-step--emphasis .arch-card__kicker {
+      color: var(--accent);
+    }
+
+    .arch-card__title {
+      font-size: 18px;
+      font-weight: 600;
+      color: #ffffff;
+    }
+
+    .arch-card__body {
+      font-size: 14px;
+      line-height: 1.55;
+      color: var(--text-muted);
+      margin: 0;
+      max-width: none;
+    }
+
+    .arch-card__note {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-faint);
+      text-align: center;
+    }
+
+    .arch-feedback {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .arch-feedback__arrow {
+      color: var(--text-faint);
+      font-size: 14px;
+      line-height: 1;
+    }
+
+    .arch-feedback__label {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-faint);
+      white-space: nowrap;
+    }
+
+    .arch-feedback__line {
+      flex: 1;
+      height: 0;
+      border-top: 1px dashed var(--border);
+    }
+
+    /* Problem diagram */
+    .problem-graph {
+      margin: 32px auto 16px;
+      max-width: 760px;
+      padding: 0;
+    }
+
+    .problem-graph__svg {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .problem-graph__node {
+      fill: transparent;
+      stroke: var(--border);
+      stroke-width: 1;
+    }
+
+    .problem-graph__node--change {
+      stroke: var(--accent);
+      stroke-width: 1.5;
+    }
+
+    .problem-graph__line {
+      stroke: var(--text-faint);
+      stroke-width: 1;
+    }
+
+    .problem-graph__arrow {
+      fill: var(--text-faint);
+    }
+
+    .problem-graph__label {
+      font-size: 14px;
+      fill: var(--text-muted);
+      text-anchor: middle;
+    }
+
+    .problem-graph__change-kicker {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      fill: var(--accent);
+      text-anchor: middle;
+      font-weight: 500;
+    }
+
+    .problem-graph__change-label {
+      font-size: 16px;
+      font-weight: 600;
+      fill: #ffffff;
+      text-anchor: middle;
+    }
+
+    .problem-graph__caption {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-faint);
+      text-align: center;
+      margin-top: 18px;
+    }
+
+    .problem-graph__mobile {
+      display: none;
+    }
+
+    /* Contact */
+    .contact .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 28px;
+      margin: 32px 0 56px;
+      font-size: 18px;
+    }
+
+    .contact .links a {
+      border-bottom-color: var(--accent);
+      padding-bottom: 3px;
+    }
+
+    .footer {
+      font-size: 13px !important;
+      color: var(--text-faint) !important;
+      letter-spacing: 0.05em;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+      max-width: none;
+    }
+
+    /* Small screens */
+    @media (max-width: 520px) {
+      main {
+        padding: 56px 24px 56px;
+      }
+
+      .hero {
+        margin-bottom: 80px;
+      }
+
+      section {
+        margin-bottom: 72px;
+      }
+
+      .brand {
+        margin-bottom: 36px;
+      }
+
+      .hero .tagline {
+        font-size: 17px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+
+    <section class="hero">
+      <div class="brand"><img src="sture-logo.svg" alt="Sture" width="150" height="48" /></div>
+      <img class="hero-image" src="hero.jpg" alt="A matte-grey autonomous quadcopter resting on a weathered concrete landing pad at a remote coastal test range, overcast morning." width="1915" height="547" />
+      <h1>Mission-to-machine for autonomous mobile machines.</h1>
+      <p class="tagline">A validation and coordination layer for teams building drones, ground robots, and autonomous watercraft. It keeps the whole machine aligned as the design evolves.</p>
+      <p class="meta">Building from Brisbane &nbsp;·&nbsp; AUKUS Pillar 2</p>
+    </section>
+
+    <section class="problem">
+      <h2>Most robotics projects don't fail because the engineers aren't smart.</h2>
+      <p>They fail because the machines are deeply interconnected. One engineer changes a motor, a battery, a sensor, or a payload, and suddenly the thermal limits, power budget, firmware behaviour, or compliance assumptions are no longer valid.</p>
+      <figure class="problem-graph">
+        <svg class="problem-graph__svg" viewBox="0 0 720 360" role="img" aria-labelledby="problem-graph-title">
+          <title id="problem-graph-title">Change one component (e.g. the motor) and four downstream assumptions break: thermal limits, autonomy envelope, perception sync, and power budget.</title>
+          <line x1="360" y1="150" x2="360" y2="76" class="problem-graph__line" />
+          <line x1="440" y1="180" x2="560" y2="180" class="problem-graph__line" />
+          <line x1="360" y1="210" x2="360" y2="284" class="problem-graph__line" />
+          <line x1="280" y1="180" x2="160" y2="180" class="problem-graph__line" />
+          <polygon points="360,76 354,84 366,84" class="problem-graph__arrow" />
+          <polygon points="560,180 552,176 552,184" class="problem-graph__arrow" />
+          <polygon points="360,284 354,276 366,276" class="problem-graph__arrow" />
+          <polygon points="160,180 168,176 168,184" class="problem-graph__arrow" />
+          <rect x="280" y="16" width="160" height="60" rx="2" class="problem-graph__node" />
+          <text x="360" y="51" class="problem-graph__label">Thermal limits</text>
+          <rect x="560" y="150" width="160" height="60" rx="2" class="problem-graph__node" />
+          <text x="640" y="185" class="problem-graph__label">Autonomy envelope</text>
+          <rect x="280" y="284" width="160" height="60" rx="2" class="problem-graph__node" />
+          <text x="360" y="319" class="problem-graph__label">Perception sync</text>
+          <rect x="0" y="150" width="160" height="60" rx="2" class="problem-graph__node" />
+          <text x="80" y="185" class="problem-graph__label">Power budget</text>
+          <rect x="280" y="150" width="160" height="60" rx="2" class="problem-graph__node problem-graph__node--change" />
+          <text x="360" y="174" class="problem-graph__change-kicker">CHANGED</text>
+          <text x="360" y="198" class="problem-graph__change-label">Motor</text>
+        </svg>
+        <div class="problem-graph__mobile">
+          <div class="problem-graph__mobile-change">
+            <span class="problem-graph__mobile-kicker">Changed</span>
+            <strong class="problem-graph__mobile-title">Motor</strong>
+          </div>
+          <span class="problem-graph__mobile-arrow" aria-hidden="true">&darr;</span>
+          <ul class="problem-graph__mobile-list">
+            <li>Thermal limits</li>
+            <li>Autonomy envelope</li>
+            <li>Perception sync</li>
+            <li>Power budget</li>
+          </ul>
+        </div>
+        <figcaption class="problem-graph__caption">Change one component &rarr; four invalidated assumptions.</figcaption>
+      </figure>
+      <p>Most teams only discover those conflicts during integration, testing, certification, or deployment, when fixes are slow, expensive, and often force major redesigns.</p>
+    </section>
+
+    <section class="solution">
+      <h2>Sture is built to prevent that.</h2>
+      <p>Sture creates the first complete draft of the machine including architecture, electronics, firmware scaffolding, mechanical systems, autonomy and perception stack, simulation, and compliance traceability, then stays involved as the design evolves.</p>
+      <p class="benefits-label">What that gives a team</p>
+      <ul class="benefits">
+        <li>
+          <strong><span class="num">01</span>Conflicts caught at design time.</strong>
+          <p>Sture flags integration failures before they happen, when changes still cost hours instead of months.</p>
+        </li>
+        <li>
+          <strong><span class="num">02</span>The whole machine stays aligned.</strong>
+          <p>When one engineer changes a component, Sture propagates the impact across the whole machine &mdash; autonomy and perception, safety envelopes, firmware, electronics, mechanical, manufacturing, and compliance. Nothing falls through the cracks.</p>
+        </li>
+        <li>
+          <strong><span class="num">03</span>Institutional knowledge compounds.</strong>
+          <p>Every validated design teaches Sture. Lessons don't disappear into documents, disconnected tools, or employee turnover. The next machine is faster to design and less likely to repeat old mistakes.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="architecture">
+      <h2>The architecture is deliberate.</h2>
+      <figure class="arch-diagram" aria-label="Three-layer architecture: AI Specification interprets the mission, the deterministic Engine validates artifacts and generates the machine, and AI Solution Advisor reviews outputs and extracts new rules that feed back into Specification.">
+        <div class="arch-flow">
+          <div class="arch-step">
+            <div class="arch-card">
+              <span class="arch-card__kicker">AI &middot; Layer 01</span>
+              <strong class="arch-card__title">Specification</strong>
+              <p class="arch-card__body">Interprets the mission. Drafts the spec.</p>
+            </div>
+            <span class="arch-card__note">LLM</span>
+          </div>
+          <div class="arch-step arch-step--emphasis">
+            <div class="arch-card">
+              <span class="arch-card__kicker">Engine</span>
+              <strong class="arch-card__title">Deterministic</strong>
+              <p class="arch-card__body">Validates artifacts. Solves constraints. Generates the machine.</p>
+            </div>
+            <span class="arch-card__note">no LLM calls</span>
+          </div>
+          <div class="arch-step">
+            <div class="arch-card">
+              <span class="arch-card__kicker">AI &middot; Layer 02</span>
+              <strong class="arch-card__title">Solution Advisor</strong>
+              <p class="arch-card__body">Reviews outputs. Challenges evidence. Extracts rules.</p>
+            </div>
+            <span class="arch-card__note">LLM</span>
+          </div>
+        </div>
+        <div class="arch-feedback" aria-hidden="true">
+          <span class="arch-feedback__arrow">&larr;</span>
+          <span class="arch-feedback__label">Extracted rules feed back into Specification</span>
+          <span class="arch-feedback__line"></span>
+        </div>
+      </figure>
+      <p>LLMs interpret and explain. A deterministic rules and traceability engine validates everything that becomes mission state.</p>
+      <p>The engine is what makes Sture different. It's where the overwhelming majority of our engineering effort has gone.</p>
+    </section>
+
+    <section class="contact">
+      <h2>Contact us.</h2>
+      <p>Sture works with autonomous-systems teams in Australia and across AUKUS-aligned programs. If engineering coordination is slowing your delivery from mission to deployed machine, we'd like to hear from you.</p>
+      <div class="links">
+        <a href="mailto:mattias@levanu.com.au">mattias@levanu.com.au</a>
+        <a href="https://www.linkedin.com/in/matt-harcourt-3821092b2/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+      <p class="footer">Sture is a product of Leva Nu Pty Ltd &nbsp;·&nbsp; Brisbane, Australia</p>
+    </section>
+
+  </main>
+</body>
+</html>
