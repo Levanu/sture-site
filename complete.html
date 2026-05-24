@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sture Complete: keep the whole machine aligned as you build</title>
-  <meta name="description" content="Sture Complete is the integration and validation layer that propagates every design change across the whole machine and catches conflicts before integration, testing, or certification. Engineers drive. The first phase of the mission-to-machine vision. Launches 8 November 2026." />
+  <title>Sture Complete: keep autonomous-machine designs aligned from spec to field</title>
+  <meta name="description" content="Sture Complete keeps autonomous-machine designs aligned from approved specification to field evidence. It catches cross-discipline conflicts before integration, and your engineers approve every change. Launches 8 November 2026." />
   <meta name="theme-color" content="#0a0e14" />
   <meta name="author" content="Leva Nu Pty Ltd" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Sture Complete: keep the whole machine aligned as you build" />
-  <meta property="og:description" content="The first phase of Sture's mission-to-machine vision: an integration and validation layer that keeps the whole machine aligned as your engineers build, with the reasoning attached to every decision. Launches 8 November 2026." />
+  <meta property="og:title" content="Sture Complete: from spec to field, without losing the thread" />
+  <meta property="og:description" content="The integration and validation layer that keeps the whole machine aligned as your engineers build, catching cross-discipline conflicts before integration. Launches 8 November 2026." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://sture.io/complete" />
   <meta property="og:image" content="https://sture.io/og.png" />
@@ -21,8 +21,8 @@
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Sture Complete: keep the whole machine aligned as you build" />
-  <meta name="twitter:description" content="Integration and validation that keeps the whole machine aligned as your engineers build. Launches 8 November 2026." />
+  <meta name="twitter:title" content="Sture Complete: from spec to field" />
+  <meta name="twitter:description" content="Keeps autonomous-machine designs aligned from approved spec to field evidence, catching cross-discipline conflicts before integration. Launches 8 November 2026." />
   <meta name="twitter:image" content="https://sture.io/og.png" />
 
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
@@ -64,39 +64,20 @@
     a:hover { border-bottom-color: var(--accent); }
 
     /* Site nav */
-    .site-nav {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 24px 32px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
+    .site-nav { max-width: var(--max-width); margin: 0 auto; padding: 24px 32px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
     .site-nav__logo { border-bottom: none; display: inline-flex; }
     .site-nav__logo img { display: block; height: 28px; width: auto; }
     .site-nav__links { display: flex; align-items: center; gap: 28px; }
-    .site-nav__links > a {
-      font-size: 15px; color: var(--text-muted); border-bottom: none;
-    }
+    .site-nav__links > a { font-size: 15px; color: var(--text-muted); border-bottom: none; }
     .site-nav__links > a:hover { color: var(--text); border-bottom: none; }
     .dropdown { position: relative; }
-    .dropdown > summary {
-      font-size: 15px; color: var(--text-muted); cursor: pointer;
-      list-style: none; display: inline-flex; align-items: center; gap: 6px;
-    }
+    .dropdown > summary { font-size: 15px; color: var(--text-muted); cursor: pointer; list-style: none; display: inline-flex; align-items: center; gap: 6px; }
     .dropdown > summary:hover { color: var(--text); }
     .dropdown > summary::-webkit-details-marker { display: none; }
     .dropdown > summary::after { content: "\25BE"; font-size: 10px; color: var(--text-faint); }
     .dropdown[open] > summary::after { color: var(--accent); }
-    .dropdown__menu {
-      position: absolute; right: 0; top: calc(100% + 12px);
-      background: #0d121a; border: 1px solid var(--border); border-radius: 2px;
-      min-width: 210px; padding: 8px; display: flex; flex-direction: column; gap: 2px; z-index: 20;
-    }
-    .dropdown__menu a {
-      padding: 10px 12px; font-size: 15px; color: var(--text-muted); border-bottom: none; border-radius: 2px;
-    }
+    .dropdown__menu { position: absolute; right: 0; top: calc(100% + 12px); background: #0d121a; border: 1px solid var(--border); border-radius: 2px; min-width: 210px; padding: 8px; display: flex; flex-direction: column; gap: 2px; z-index: 20; }
+    .dropdown__menu a { padding: 10px 12px; font-size: 15px; color: var(--text-muted); border-bottom: none; border-radius: 2px; }
     .dropdown__menu a:hover { color: var(--text); background: #131a24; border-bottom: none; }
 
     main {
@@ -144,7 +125,7 @@
       margin: 24px 0 0; max-width: var(--text-width);
     }
 
-    /* Waitlist form (shared with Explore) */
+    /* Waitlist form */
     .waitlist-form {
       display: flex; flex-wrap: wrap; gap: 12px; max-width: 520px; margin: 0;
     }
@@ -177,12 +158,22 @@
     section p:last-of-type { margin-bottom: 0; }
     .lead { color: var(--text-muted); }
 
+    /* Pain cascade */
+    .cascade { list-style: none; padding: 0; margin: 24px 0 24px; max-width: var(--text-width); }
+    .cascade li {
+      font-size: clamp(18px, 1.9vw, 22px); line-height: 1.45; color: #ffffff;
+      padding: 12px 0; border-top: 1px solid var(--border);
+    }
+    .cascade li:first-child { border-top: none; }
+    .cascade li span { color: var(--accent); }
+
     /* Capability groups */
     .cap-group { border-top: 1px solid var(--border); padding-top: 32px; }
     .cap-group__kicker {
       font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
       color: var(--accent); margin: 0 0 16px;
     }
+    .cap-group--muted .cap-group__kicker { color: var(--text-faint); }
     .cap-list { list-style: none; padding: 0; margin: 0; max-width: 920px; }
     .cap-list li {
       padding: 14px 0 14px 22px; position: relative;
@@ -194,7 +185,7 @@
       content: ""; position: absolute; left: 0; top: 24px;
       width: 6px; height: 6px; background: var(--accent); border-radius: 50%;
     }
-    .cap-list li strong { color: var(--text); font-weight: 600; }
+    .cap-group--muted .cap-list li::before { background: var(--text-faint); }
 
     .footer {
       font-size: 13px; color: var(--text-faint); letter-spacing: 0.05em;
@@ -236,10 +227,10 @@
   <main>
 
     <section class="hero">
-      <p class="eyebrow">Engineering software for teams building autonomous machines</p>
+      <p class="eyebrow">Spec-to-field software for autonomous machine teams</p>
       <span class="launch-badge">Launches 8 November 2026</span>
-      <h1>Explore gets you the right spec. Complete keeps the whole machine aligned as your engineers build it.</h1>
-      <p class="tagline">Sture Complete is the first phase of the full mission-to-machine vision: an integration and validation layer that propagates every change across the entire machine and surfaces the conflicts that normally stay hidden until integration, testing, or certification. Your engineers stay in the driver's seat, nothing is a black box, and the reasoning travels with every decision.</p>
+      <h1>Explore gets you the right spec. Complete keeps the whole machine aligned while your team builds it.</h1>
+      <p class="tagline">Sture Complete is the integration and validation layer for autonomous-machine programs. It keeps architecture, electronics, mechanical design, firmware, compliance, sourcing, test, and field evidence in sync as the design changes. Every change is checked across the machine, conflicts are surfaced early, your engineers approve every decision, and the reasoning travels with the work.</p>
 
       <form class="waitlist-form" action="https://buttondown.email/api/emails/embed-subscribe/MattHarcourt" method="post" target="_blank">
         <input type="email" name="email" required placeholder="you@yourteam.com" aria-label="Email address" />
@@ -250,55 +241,73 @@
       <p class="launch-note">8 November is the birthday of Sture, the grandfather this company is named for.</p>
     </section>
 
-    <section class="intro">
-      <h2>Everything in Explore, plus the layer that keeps the machine integrated.</h2>
-      <p class="lead">Explore takes you from a problem to an approved, evidence-backed specification. Complete is the first phase of what comes after: the deterministic engine and review loop that keep architecture, design, firmware, compliance, and the field in sync as your team builds. It drafts, checks, and coordinates across the whole machine. Your engineers decide.</p>
+    <section class="problem">
+      <h2>From spec to field, without losing the thread.</h2>
+      <p class="lead">Autonomous-machine teams don't fail because one discipline did bad work. They fail when the disciplines drift apart.</p>
+      <ul class="cascade">
+        <li>A payload change breaks <span>endurance</span>.</li>
+        <li>A board change breaks <span>thermal</span>.</li>
+        <li>A compute decision breaks <span>autonomy</span>.</li>
+        <li>A sourcing substitution breaks <span>compliance</span>.</li>
+        <li>A field result contradicts <span>the model</span>.</li>
+      </ul>
+      <p class="lead">Complete catches those conflicts while they are still cheap to fix.</p>
     </section>
 
     <section class="cap-group">
       <p class="cap-group__kicker">Architecture and design</p>
       <ul class="cap-list">
-        <li>Drafts an architecture trade study for your review (vehicle class, power, propulsion, sensing, compute, comms, safety).</li>
-        <li>Proposes the detailed design and keeps it consistent across schematic, PCB, harness, and BOM.</li>
-        <li>Flags when a board should split, using the 14-pattern daughter-board table.</li>
-        <li>Keeps mechanical in sync with the electronics: frame, chassis, hull, airframe, enclosures, mounting, with CAD sync (STEP/glTF, SOLIDWORKS/PDM read, bidirectional write).</li>
-        <li>Sizes propulsion and actuation and reasons about sensor placement and field of view, for your engineers to confirm.</li>
+        <li>Drafts architecture trade studies for engineer review: vehicle class, power, propulsion, sensing, compute, comms, and safety.</li>
+        <li>Proposes detailed-design updates and checks they stay consistent across schematic, PCB, harness, BOM, and the mechanical build.</li>
       </ul>
     </section>
 
     <section class="cap-group">
       <p class="cap-group__kicker">Validation and sourcing</p>
       <ul class="cap-list">
-        <li>Runs the analysis for your team to check: power, endurance, thermal, dynamics and control, RF and comms, structural and vibration, environmental.</li>
-        <li>Surfaces sourcing reality: purchasable parts, alternates, lead-time, cost and availability, local supply chain, manufacturing exports.</li>
+        <li>Runs reviewable analyses across power, endurance, thermal, dynamics, RF, structural, vibration, and environmental constraints.</li>
+        <li>Surfaces sourcing reality: parts, alternates, lead time, cost, availability, and local supply chain.</li>
       </ul>
     </section>
 
     <section class="cap-group">
-      <p class="cap-group__kicker">Software, test, compliance, deploy</p>
+      <p class="cap-group__kicker">Software, test, and compliance</p>
       <ul class="cap-list">
-        <li>Scaffolds firmware and the autonomy stack for your engineers to own (ROS 2, PX4, Nav2, MAVLink, RTOS and embedded Linux), with calibration and bring-up.</li>
-        <li>Drafts the test plan: bench, subsystem, integration, safety, and field tests, acceptance criteria, operator checklists.</li>
-        <li>Assembles the compliance evidence: standards mapping, safety case, FMEA and hazard analysis, ICD, operating envelope.</li>
-        <li>Prepares the deployment package: setup, calibration, preflight and predrive checks, operator procedures, maintenance, rollback.</li>
+        <li>Scaffolds firmware and autonomy work for your engineers to own: ROS 2, PX4, Nav2, MAVLink, RTOS, and embedded Linux.</li>
+        <li>Drafts test plans, acceptance criteria, operating procedures, compliance evidence, FMEA, hazard analysis, and operating-envelope docs.</li>
       </ul>
     </section>
 
     <section class="cap-group">
-      <p class="cap-group__kicker">Closed loop and platform</p>
+      <p class="cap-group__kicker">Field loop</p>
       <ul class="cap-list">
-        <li>Ingests telemetry (SITL, HIL, field) and compares predicted vs observed.</li>
-        <li>Recommends redesigns that feed governed rule improvement, on your approval.</li>
-        <li>Keeps a reproducible, signed generation trace (spec, engine, rule, corpus and component versions, artifacts, evidence bundle).</li>
-        <li>Rolls every domain verdict into the canonical ReadinessProofReport, the final readiness authority.</li>
-        <li>Brackets long-running simulators and GPU jobs through an adapter and external-compute layer.</li>
-        <li>Runs deep air, ground, and water domain packs on the shared core.</li>
+        <li>Ingests simulation, HIL, and field telemetry, then compares predicted behaviour with observed.</li>
+        <li>When the machine disagrees with the model, it shows the gap and proposes redesigns for engineer approval.</li>
+      </ul>
+    </section>
+
+    <section class="cap-group">
+      <p class="cap-group__kicker">Traceability</p>
+      <ul class="cap-list">
+        <li>Every output traces back to the spec, rules, corpus, and components it came from. Nothing important is a black box.</li>
+      </ul>
+    </section>
+
+    <section class="cap-group cap-group--muted">
+      <p class="cap-group__kicker">Under the hood</p>
+      <ul class="cap-list">
+        <li>Multi-board split detection via the 14-pattern daughter-board table.</li>
+        <li>CAD sync: STEP and glTF export, SOLIDWORKS and PDM read, bidirectional write.</li>
+        <li>Reproducible, signed generation trace: spec, engine, rule, corpus, and component versions, plus artifacts and evidence bundle.</li>
+        <li>Canonical ReadinessProofReport as the final readiness authority.</li>
+        <li>Adapter and external-compute layer for long-running simulators and GPU jobs.</li>
+        <li>Deep air, ground, and water domain packs on the shared core.</li>
       </ul>
     </section>
 
     <section class="cta">
-      <h2>Keep the whole machine aligned, from mission to field.</h2>
-      <p class="lead">Sture Complete is the first phase of the mission-to-machine vision, and it launches 8 November 2026. Join the list and you will hear the moment it is live.</p>
+      <h2>Keep the whole machine aligned, from spec to field.</h2>
+      <p class="lead">Sture Complete keeps autonomous-machine programs coherent from approved specification to field evidence. It launches 8 November 2026, and you'll hear the moment it is live.</p>
       <form class="waitlist-form" action="https://buttondown.email/api/emails/embed-subscribe/MattHarcourt" method="post" target="_blank">
         <input type="email" name="email" required placeholder="you@yourteam.com" aria-label="Email address" />
         <input type="hidden" value="1" name="embed" />
