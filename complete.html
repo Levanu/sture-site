@@ -258,41 +258,41 @@
     <section class="cap-group">
       <p class="cap-group__kicker">Architecture and design</p>
       <ul class="cap-list">
-        <li>Architecture trade study (vehicle class, power, propulsion, sensing, compute, comms, safety).</li>
-        <li>Detailed design: schematic, PCB, harness, BOM.</li>
-        <li>Multi-board split detection (the 14-pattern daughter-board table).</li>
-        <li>Mechanical: frame, chassis, hull, airframe, enclosures, mounting, CAD sync (STEP/glTF, SOLIDWORKS/PDM read, bidirectional write).</li>
-        <li>Propulsion and actuation sizing, sensor placement and field-of-view reasoning.</li>
+        <li>Drafts an architecture trade study for your review (vehicle class, power, propulsion, sensing, compute, comms, safety).</li>
+        <li>Proposes the detailed design and keeps it consistent across schematic, PCB, harness, and BOM.</li>
+        <li>Flags when a board should split, using the 14-pattern daughter-board table.</li>
+        <li>Keeps mechanical in sync with the electronics: frame, chassis, hull, airframe, enclosures, mounting, with CAD sync (STEP/glTF, SOLIDWORKS/PDM read, bidirectional write).</li>
+        <li>Sizes propulsion and actuation and reasons about sensor placement and field of view, for your engineers to confirm.</li>
       </ul>
     </section>
 
     <section class="cap-group">
       <p class="cap-group__kicker">Validation and sourcing</p>
       <ul class="cap-list">
-        <li>Simulation and analysis: power, endurance, thermal, dynamics and control, RF and comms, structural and vibration, environmental.</li>
-        <li>Sourcing: purchasable parts, alternates, lead-time, cost and availability, local supply chain, manufacturing exports.</li>
+        <li>Runs the analysis for your team to check: power, endurance, thermal, dynamics and control, RF and comms, structural and vibration, environmental.</li>
+        <li>Surfaces sourcing reality: purchasable parts, alternates, lead-time, cost and availability, local supply chain, manufacturing exports.</li>
       </ul>
     </section>
 
     <section class="cap-group">
       <p class="cap-group__kicker">Software, test, compliance, deploy</p>
       <ul class="cap-list">
-        <li>Firmware and autonomy-stack generation (ROS 2, PX4, Nav2, MAVLink, RTOS and embedded Linux), calibration and bring-up.</li>
-        <li>Test planning: bench, subsystem, integration, safety, and field tests, acceptance criteria, operator checklists.</li>
-        <li>Compliance evidence: standards mapping, safety case, FMEA and hazard analysis, ICD, operating envelope.</li>
-        <li>Deployment package: setup, calibration, preflight and predrive checks, operator procedures, maintenance, rollback.</li>
+        <li>Scaffolds firmware and the autonomy stack for your engineers to own (ROS 2, PX4, Nav2, MAVLink, RTOS and embedded Linux), with calibration and bring-up.</li>
+        <li>Drafts the test plan: bench, subsystem, integration, safety, and field tests, acceptance criteria, operator checklists.</li>
+        <li>Assembles the compliance evidence: standards mapping, safety case, FMEA and hazard analysis, ICD, operating envelope.</li>
+        <li>Prepares the deployment package: setup, calibration, preflight and predrive checks, operator procedures, maintenance, rollback.</li>
       </ul>
     </section>
 
     <section class="cap-group">
       <p class="cap-group__kicker">Closed loop and platform</p>
       <ul class="cap-list">
-        <li>Telemetry ingestion (SITL, HIL, field) and predicted-vs-observed comparison.</li>
-        <li>Redesign recommendations feeding governed rule improvement.</li>
-        <li>Reproducible, signed generation trace (spec, engine, rule, corpus and component versions, artifacts, evidence bundle).</li>
-        <li>Canonical ReadinessProofReport as the final readiness authority.</li>
-        <li>Adapter and external-compute layer for long-running simulators and GPU jobs.</li>
-        <li>Deep air, ground, and water domain packs on the shared core.</li>
+        <li>Ingests telemetry (SITL, HIL, field) and compares predicted vs observed.</li>
+        <li>Recommends redesigns that feed governed rule improvement, on your approval.</li>
+        <li>Keeps a reproducible, signed generation trace (spec, engine, rule, corpus and component versions, artifacts, evidence bundle).</li>
+        <li>Rolls every domain verdict into the canonical ReadinessProofReport, the final readiness authority.</li>
+        <li>Brackets long-running simulators and GPU jobs through an adapter and external-compute layer.</li>
+        <li>Runs deep air, ground, and water domain packs on the shared core.</li>
       </ul>
     </section>
 
