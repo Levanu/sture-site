@@ -71,10 +71,27 @@
       border-bottom-color: var(--accent);
     }
 
+    /* Site nav */
+    .site-nav { max-width: var(--max-width); margin: 0 auto; padding: 24px 32px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .site-nav__logo { border-bottom: none; display: inline-flex; }
+    .site-nav__logo img { display: block; height: 28px; width: auto; }
+    .site-nav__links { display: flex; align-items: center; gap: 28px; }
+    .site-nav__links > a { font-size: 15px; color: var(--text-muted); border-bottom: none; }
+    .site-nav__links > a:hover { color: var(--text); border-bottom: none; }
+    .dropdown { position: relative; }
+    .dropdown > summary { font-size: 15px; color: var(--text-muted); cursor: pointer; list-style: none; display: inline-flex; align-items: center; gap: 6px; }
+    .dropdown > summary:hover { color: var(--text); }
+    .dropdown > summary::-webkit-details-marker { display: none; }
+    .dropdown > summary::after { content: "\25BE"; font-size: 10px; color: var(--text-faint); }
+    .dropdown[open] > summary::after { color: var(--accent); }
+    .dropdown__menu { position: absolute; right: 0; top: calc(100% + 12px); background: #0d121a; border: 1px solid var(--border); border-radius: 2px; min-width: 210px; padding: 8px; display: flex; flex-direction: column; gap: 2px; z-index: 20; }
+    .dropdown__menu a { padding: 10px 12px; font-size: 15px; color: var(--text-muted); border-bottom: none; border-radius: 2px; }
+    .dropdown__menu a:hover { color: var(--text); background: #131a24; border-bottom: none; }
+
     main {
       max-width: var(--max-width);
       margin: 0 auto;
-      padding: 96px 32px 64px;
+      padding: 48px 32px 64px;
     }
 
     section {
@@ -521,6 +538,10 @@
 
     /* Small screens */
     @media (max-width: 520px) {
+      .site-nav { padding: 18px 24px; }
+      .site-nav__links { gap: 18px; }
+      .dropdown__menu { position: static; min-width: 0; margin-top: 8px; border: none; padding: 0; background: transparent; }
+
       main {
         padding: 56px 24px 56px;
       }
@@ -544,10 +565,24 @@
   </style>
 </head>
 <body>
+
+  <header class="site-nav">
+    <a class="site-nav__logo" href="/" aria-label="Sture home"><img src="sture-logo.svg" alt="Sture" width="88" height="28" /></a>
+    <nav class="site-nav__links">
+      <details class="dropdown">
+        <summary>Products</summary>
+        <div class="dropdown__menu">
+          <a href="/explore">Sture Explore</a>
+          <a href="/complete">Sture Complete</a>
+        </div>
+      </details>
+      <a href="mailto:mattias@levanu.com.au">Contact</a>
+    </nav>
+  </header>
+
   <main>
 
     <section class="hero">
-      <div class="brand"><img src="sture-logo.svg" alt="Sture" width="150" height="48" /></div>
       <img class="hero-image" src="hero.jpg" alt="A matte-grey autonomous quadcopter resting on a weathered concrete landing pad at a remote coastal test range, overcast morning." width="1915" height="547" />
       <h1>Mission-to-machine for autonomous mobile machines.</h1>
       <p class="tagline">A validation and coordination layer for teams building drones, ground robots, and autonomous watercraft. It keeps the whole machine aligned as the design evolves.</p>
