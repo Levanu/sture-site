@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sture Complete: keep autonomous-machine designs aligned from spec to field</title>
-  <meta name="description" content="Sture Complete keeps autonomous-machine designs aligned from approved specification to field evidence. It catches cross-discipline conflicts before integration, and your engineers approve every change. Launches 8 November 2026." />
+  <meta name="description" content="Sture Complete is an integration and validation layer for autonomous-machine programs. It connects the approved spec to architecture, design, firmware, sourcing, test, compliance, and field evidence, surfacing conflicts early while your engineers approve every change. Early access opens 8 November 2026." />
   <meta name="theme-color" content="#0a0e14" />
   <meta name="author" content="Leva Nu Pty Ltd" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Sture Complete: from spec to field, without losing the thread" />
-  <meta property="og:description" content="The integration and validation layer that keeps the whole machine aligned as your engineers build, catching cross-discipline conflicts before integration. Launches 8 November 2026." />
+  <meta property="og:description" content="The integration and validation layer that keeps the machine aligned as your team turns an approved spec into engineering work. Surfaces cross-discipline conflicts early; engineers approve every change. Early access opens 8 November 2026." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://sture.io/complete" />
   <meta property="og:image" content="https://sture.io/og.png" />
@@ -22,7 +22,7 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Sture Complete: from spec to field" />
-  <meta name="twitter:description" content="Keeps autonomous-machine designs aligned from approved spec to field evidence, catching cross-discipline conflicts before integration. Launches 8 November 2026." />
+  <meta name="twitter:description" content="Keeps autonomous-machine designs aligned from approved spec to field evidence, surfacing cross-discipline conflicts early. Early access opens 8 November 2026." />
   <meta name="twitter:image" content="https://sture.io/og.png" />
 
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
@@ -62,6 +62,12 @@
       transition: border-color 0.15s ease;
     }
     a:hover { border-bottom-color: var(--accent); }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.9em; color: var(--text);
+      background: #0d121a; padding: 1px 6px; border-radius: 2px;
+    }
 
     /* Site nav */
     .site-nav { max-width: var(--max-width); margin: 0 auto; padding: 24px 32px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
@@ -117,8 +123,9 @@
 
     .hero .tagline {
       font-size: clamp(18px, 1.6vw, 22px); line-height: 1.55;
-      color: var(--text-muted); margin: 0 0 40px; max-width: var(--text-width);
+      color: var(--text-muted); margin: 0 0 24px; max-width: var(--text-width);
     }
+    .hero .tagline:last-of-type { margin-bottom: 40px; }
 
     .launch-note {
       font-size: 14px; color: var(--text-faint); font-style: italic;
@@ -228,9 +235,10 @@
 
     <section class="hero">
       <p class="eyebrow">Spec-to-field software for autonomous machine teams</p>
-      <span class="launch-badge">Launches 8 November 2026</span>
-      <h1>Explore gets you the right spec. Complete keeps the whole machine aligned while your team builds it.</h1>
-      <p class="tagline">Sture Complete is the integration and validation layer for autonomous-machine programs. It keeps architecture, electronics, mechanical design, firmware, compliance, sourcing, test, and field evidence in sync as the design changes. Every change is checked across the machine, conflicts are surfaced early, your engineers approve every decision, and the reasoning travels with the work.</p>
+      <span class="launch-badge">Early access opens 8 November 2026</span>
+      <h1>Explore gets you to the right specification. Complete helps keep the machine aligned as your team turns that specification into engineering work.</h1>
+      <p class="tagline">Sture Complete is an integration and validation layer for autonomous-machine programs. It connects the approved spec to architecture, electronics, mechanical design, firmware, sourcing, test planning, compliance evidence, and field feedback. As the design changes, Complete checks the supported machine graph, surfaces conflicts early, and keeps the reasoning attached to the work.</p>
+      <p class="tagline">Your engineers stay in control. Sture proposes, checks, traces, and flags. Your team reviews and approves.</p>
 
       <form class="waitlist-form" action="https://buttondown.email/api/emails/embed-subscribe/MattHarcourt" method="post" target="_blank">
         <input type="email" name="email" required placeholder="you@yourteam.com" aria-label="Email address" />
@@ -243,71 +251,77 @@
 
     <section class="problem">
       <h2>From spec to field, without losing the thread.</h2>
-      <p class="lead">Autonomous-machine teams don't fail because one discipline did bad work. They fail when the disciplines drift apart.</p>
+      <p class="lead">Autonomous-machine programs rarely fail because one discipline did bad work. They fail because the disciplines drift apart.</p>
       <ul class="cascade">
-        <li>A payload change breaks <span>endurance</span>.</li>
-        <li>A board change breaks <span>thermal</span>.</li>
-        <li>A compute decision breaks <span>autonomy</span>.</li>
-        <li>A sourcing substitution breaks <span>compliance</span>.</li>
-        <li>A field result contradicts <span>the model</span>.</li>
+        <li>A payload change affects <span>endurance</span>.</li>
+        <li>A board change affects <span>thermal margin</span>.</li>
+        <li>A compute decision affects <span>autonomy</span>.</li>
+        <li>A sourcing substitution affects <span>compliance evidence</span>.</li>
+        <li>A test result contradicts <span>the model</span>.</li>
       </ul>
-      <p class="lead">Complete catches those conflicts while they are still cheap to fix.</p>
+      <p class="lead">Complete is built to catch those gaps while they are still reviewable, traceable, and cheaper to fix.</p>
     </section>
 
     <section class="cap-group">
       <p class="cap-group__kicker">Architecture and design</p>
       <ul class="cap-list">
-        <li>Drafts architecture trade studies for engineer review: vehicle class, power, propulsion, sensing, compute, comms, and safety.</li>
-        <li>Proposes detailed-design updates and checks they stay consistent across schematic, PCB, harness, BOM, and the mechanical build.</li>
+        <li>Drafts architecture trade studies for engineer review, including vehicle class, power, propulsion, sensing, compute, communications, and safety assumptions.</li>
+        <li>Proposes design updates and checks them against the supported system graph: schematic, PCB, harness, BOM, mechanical interfaces, mounting, enclosure, and operating constraints.</li>
+        <li>Flags cross-domain conflicts for review instead of hiding them in separate documents, spreadsheets, or tool exports.</li>
       </ul>
     </section>
 
     <section class="cap-group">
       <p class="cap-group__kicker">Validation and sourcing</p>
       <ul class="cap-list">
-        <li>Runs reviewable analyses across power, endurance, thermal, dynamics, RF, structural, vibration, and environmental constraints.</li>
-        <li>Surfaces sourcing reality: parts, alternates, lead time, cost, availability, and local supply chain.</li>
+        <li>Runs reviewable analyses across the supported engineering domains: power, endurance, thermal, dynamics, RF, structural, vibration, and environmental constraints.</li>
+        <li>Surfaces sourcing reality where data is available: candidate parts, alternates, lead time, cost, availability, substitution risk, and local supply-chain assumptions.</li>
+        <li>When evidence is missing, stale, synthetic, or not yet connected to a live provider, Complete labels it plainly instead of treating it as proven.</li>
       </ul>
     </section>
 
     <section class="cap-group">
       <p class="cap-group__kicker">Software, test, and compliance</p>
       <ul class="cap-list">
-        <li>Scaffolds firmware and autonomy work for your engineers to own: ROS 2, PX4, Nav2, MAVLink, RTOS, and embedded Linux.</li>
-        <li>Drafts test plans, acceptance criteria, operating procedures, compliance evidence, FMEA, hazard analysis, and operating-envelope docs.</li>
+        <li>Scaffolds firmware and autonomy work for engineer ownership across supported stacks including ROS 2, PX4, Nav2, MAVLink, RTOS, and embedded Linux workflows.</li>
+        <li>Drafts test plans, acceptance criteria, operating procedures, compliance evidence, FMEA, hazard analysis, and operating-envelope documentation.</li>
+        <li>Every generated output is intended for review. Complete does not certify the machine, approve deployment, or replace engineering sign-off.</li>
       </ul>
     </section>
 
     <section class="cap-group">
-      <p class="cap-group__kicker">Field loop</p>
+      <p class="cap-group__kicker">Simulation, HIL, and field evidence</p>
       <ul class="cap-list">
-        <li>Ingests simulation, HIL, and field telemetry, then compares predicted behaviour with observed.</li>
-        <li>When the machine disagrees with the model, it shows the gap and proposes redesigns for engineer approval.</li>
+        <li>Ingests simulation, HIL, and field evidence where connected, and compares predicted behaviour with observed results.</li>
+        <li>When the machine disagrees with the model, Complete shows the gap, traces the affected assumptions, and proposes redesigns or follow-up checks for engineer approval.</li>
+        <li>Unsupported simulators, missing credentials, synthetic fixtures, and unavailable field data remain explicit blockers.</li>
       </ul>
     </section>
 
     <section class="cap-group">
       <p class="cap-group__kicker">Traceability</p>
       <ul class="cap-list">
-        <li>Every output traces back to the spec, rules, corpus, and components it came from. Nothing important is a black box.</li>
+        <li>Every important output traces back to the spec, rules, corpus, component data, assumptions, and generated artifacts that produced it.</li>
+        <li>Complete keeps a reproducible generation trace so reviews can answer the practical question: why did we build it this way?</li>
       </ul>
     </section>
 
     <section class="cap-group cap-group--muted">
       <p class="cap-group__kicker">Under the hood</p>
       <ul class="cap-list">
-        <li>Multi-board split detection via the 14-pattern daughter-board table.</li>
-        <li>CAD sync: STEP and glTF export, SOLIDWORKS and PDM read, bidirectional write.</li>
-        <li>Reproducible, signed generation trace: spec, engine, rule, corpus, and component versions, plus artifacts and evidence bundle.</li>
-        <li>Canonical ReadinessProofReport as the final readiness authority.</li>
-        <li>Adapter and external-compute layer for long-running simulators and GPU jobs.</li>
-        <li>Deep air, ground, and water domain packs on the shared core.</li>
+        <li>Multi-board split detection using the 14-pattern daughter-board table.</li>
+        <li>CAD workflow support for STEP and glTF exports, SOLIDWORKS and PDM metadata reads, and reviewed writeback through supported CAD paths.</li>
+        <li>Signed generation traces covering spec, engine, rule, corpus, component versions, artifacts, and evidence bundles.</li>
+        <li>Canonical <code>ReadinessProofReport</code> as the readiness authority for supported workflows.</li>
+        <li>Adapter contracts for long-running simulator and GPU jobs, with unavailable providers blocked explicitly until configured.</li>
+        <li>Air, ground, and water domain packs built on the shared Sture core, with domain-specific checks, artifacts, and review gates.</li>
       </ul>
     </section>
 
     <section class="cta">
-      <h2>Keep the whole machine aligned, from spec to field.</h2>
-      <p class="lead">Sture Complete keeps autonomous-machine programs coherent from approved specification to field evidence. It launches 8 November 2026, and you'll hear the moment it is live.</p>
+      <h2>Keep the machine aligned.</h2>
+      <p class="lead">Sture Complete is the next step after Explore: from an approved specification to a connected, reviewable engineering workflow.</p>
+      <p class="lead">Early access opens <strong>8 November 2026</strong>. Join the list and we will email you when it is ready.</p>
       <form class="waitlist-form" action="https://buttondown.email/api/emails/embed-subscribe/MattHarcourt" method="post" target="_blank">
         <input type="email" name="email" required placeholder="you@yourteam.com" aria-label="Email address" />
         <input type="hidden" value="1" name="embed" />
@@ -321,7 +335,7 @@
 
   <script>
     (function () {
-      var SUCCESS = "You're on the list. Sture Complete launches 8 November 2026. We will email you the moment it is live. No spam, no nonsense.";
+      var SUCCESS = "You're on the list. Sture Complete early access opens 8 November 2026. We will email you when it is ready. No spam, no nonsense.";
       document.querySelectorAll(".waitlist-form").forEach(function (form) {
         form.addEventListener("submit", function (e) {
           e.preventDefault();
