@@ -236,8 +236,9 @@
     <section class="hero">
       <p class="eyebrow">Spec-to-field software for autonomous machine teams</p>
       <span class="launch-badge">Early access opens 8 November 2026</span>
-      <h1>Explore gets you to the right specification. Complete helps keep the machine aligned as your team turns that specification into engineering work.</h1>
-      <p class="tagline">Sture Complete is an integration and validation layer for autonomous-machine programs. It connects the approved spec to architecture, electronics, mechanical design, firmware, sourcing, test planning, compliance evidence, and field feedback. As the design changes, Complete checks the supported machine graph, surfaces conflicts early, and keeps the reasoning attached to the work.</p>
+      <h1>Explore gets your team to an approved specification. Complete helps keep the machine aligned as that specification becomes engineering work.</h1>
+      <p class="tagline">Sture Complete connects the approved spec to architecture, electronics, mechanical design, firmware, sourcing, test planning, compliance evidence, and field feedback across a supported machine graph.</p>
+      <p class="tagline">As the design changes, Complete checks the affected parts of the graph, surfaces conflicts for review, and keeps the reasoning attached to the work.</p>
       <p class="tagline">Your engineers stay in control. Sture proposes, checks, traces, and flags. Your team reviews and approves.</p>
 
       <form class="waitlist-form" action="https://buttondown.email/api/emails/embed-subscribe/MattHarcourt" method="post" target="_blank">
@@ -259,37 +260,43 @@
         <li>A sourcing substitution affects <span>compliance evidence</span>.</li>
         <li>A test result contradicts <span>the model</span>.</li>
       </ul>
-      <p class="lead">Complete is built to catch those gaps while they are still reviewable, traceable, and cheaper to fix.</p>
+      <p class="lead">Each change was reasonable.</p>
+      <p class="lead">Each change was reviewed.</p>
+      <p class="lead">The failure happens when those changes are reviewed separately.</p>
+      <p class="lead">Complete is built to make those gaps visible while they are still reviewable, traceable, and cheaper to fix.</p>
     </section>
 
     <section class="thread">
-      <h2>The week you find out everything moved without you.</h2>
-      <p class="lead">Three months into the build. Integration starts on Monday.</p>
-      <p class="lead">The systems engineer pulls up the latest spec, the latest schematic, the latest mechanical, the latest firmware tag, the latest compliance dossier.</p>
-      <p class="lead">They were all approved.</p>
+      <h2>The week everything moved without you.</h2>
+      <p class="lead">Three months into the build, integration starts on Monday.</p>
+      <p class="lead">The latest spec is approved.</p>
+      <p class="lead">The latest schematic is approved.</p>
+      <p class="lead">The latest mechanical package is approved.</p>
+      <p class="lead">The latest firmware tag is approved.</p>
+      <p class="lead">The latest compliance dossier is approved.</p>
       <p class="lead">They were all approved separately.</p>
       <p class="lead">The schematic moved a regulator to a new rail.</p>
-      <p class="lead">The mechanical redesigned the heat-sink path the new rail relies on.</p>
-      <p class="lead">The firmware now talks to a sensor that still draws from the old rail.</p>
-      <p class="lead">The compliance dossier still cites the part that was substituted six weeks ago.</p>
-      <p class="lead">The autonomy stack assumes a frame rate the new compute will not actually hit.</p>
-      <p class="lead">Each change was reasonable.</p>
-      <p class="lead">Each change was reviewed.</p>
-      <p class="lead">Nobody told the others.</p>
-      <p class="lead">By Friday the team is rebuilding the harness, re-running the thermal model, re-issuing the cert pages, and explaining to the program lead why the integration date moved.</p>
+      <p class="lead">The mechanical design changed the heat path that rail depends on.</p>
+      <p class="lead">The firmware still talks to a sensor on the old assumption.</p>
+      <p class="lead">The compliance dossier still cites the substituted part.</p>
+      <p class="lead">The autonomy stack assumes a frame rate the new compute will not hit.</p>
+      <p class="lead">By Friday the team is rebuilding the harness, re-running thermal checks, updating evidence, and explaining to the program lead why the integration date moved.</p>
       <p class="lead">Not because the engineers were sloppy.</p>
-      <p class="lead">Because there was no living thread between the disciplines the work was tearing apart.</p>
+      <p class="lead">Because there was no living thread between the disciplines.</p>
     </section>
 
     <section class="thread-after">
-      <h2>What Sture Complete keeps alive.</h2>
-      <p class="lead">Complete is the layer that keeps the spec, the architecture, every discipline's working artifact, and the sourcing and compliance evidence on the same machine graph.</p>
-      <p class="lead">When a part is substituted, the cert pages that cite it surface for review the same hour, not at the next audit.</p>
-      <p class="lead">When the schematic moves a rail, the mechanical owner sees the thermal implication and the firmware owner sees the sensor implication, both with the original change in plain view.</p>
-      <p class="lead">When the autonomy team makes an assumption about frame rate, the compute decision gets flagged the moment it no longer supports it.</p>
-      <p class="lead">When field telemetry comes back from a deployed unit and contradicts the model, the affected design assumptions surface in the next program review, not in a separate ticket nobody connects.</p>
-      <p class="lead">Engineers still approve every change. Complete does not certify, does not deploy, does not replace sign-off. It does the part that has nothing to do with how good your engineers are: it stops the work from quietly tearing apart while everyone is heads-down doing their bit.</p>
-      <p class="lead">The integration date holds because the changes never desynchronised in the first place.</p>
+      <h2>What Complete keeps alive.</h2>
+      <p class="lead">Complete keeps the approved spec, system architecture, engineering artifacts, sourcing evidence, compliance evidence, and field feedback connected through the supported machine graph.</p>
+      <p class="lead">When a part is substituted, the affected compliance evidence surfaces for review the same hour, not at the next audit.</p>
+      <p class="lead">When a schematic change affects thermal margin, the mechanical owner sees the implication.</p>
+      <p class="lead">When firmware depends on a sensor assumption, the dependency remains visible.</p>
+      <p class="lead">When autonomy assumes a frame rate, the compute decision is checked against it.</p>
+      <p class="lead">When field or simulation evidence contradicts the model, the affected assumptions are traced back into the next review.</p>
+      <p class="lead">Engineers still approve every change.</p>
+      <p class="lead">Complete does not certify, deploy, or replace engineering sign-off. It keeps the work from quietly desynchronising while every team is focused on its own part.</p>
+      <p class="lead">The engineers were always good at their disciplines.</p>
+      <p class="lead">The thread between the disciplines is what Complete holds.</p>
     </section>
 
     <section class="cap-group">
@@ -304,7 +311,7 @@
     <section class="cap-group">
       <p class="cap-group__kicker">Validation and sourcing</p>
       <ul class="cap-list">
-        <li>Runs reviewable analyses across the supported engineering domains: power, endurance, thermal, dynamics, RF, structural, vibration, and environmental constraints.</li>
+        <li>Runs reviewable screening analyses across supported domains: power, endurance, thermal, dynamics, RF, structural, vibration, and environmental constraints.</li>
         <li>Surfaces sourcing reality where data is available: candidate parts, alternates, lead time, cost, availability, substitution risk, and local supply-chain assumptions.</li>
         <li>When evidence is missing, stale, synthetic, or not yet connected to a live provider, Complete labels it plainly instead of treating it as proven.</li>
       </ul>
@@ -339,12 +346,13 @@
     <section class="cap-group cap-group--muted">
       <p class="cap-group__kicker">Under the hood</p>
       <ul class="cap-list">
-        <li>Multi-board split detection using the 14-pattern daughter-board table.</li>
-        <li>CAD workflow support for STEP and glTF exports, SOLIDWORKS and PDM metadata reads, and reviewed writeback through supported CAD paths.</li>
-        <li>Signed generation traces covering spec, engine, rule, corpus, component versions, artifacts, and evidence bundles.</li>
-        <li>Canonical <code>ReadinessProofReport</code> as the readiness authority for supported workflows.</li>
-        <li>Adapter contracts for long-running simulator and GPU jobs, with unavailable providers blocked explicitly until configured.</li>
-        <li>Air, ground, and water domain packs built on the shared Sture core, with domain-specific checks, artifacts, and review gates.</li>
+        <li>Supported machine graph across architecture, electronics, mechanical, firmware, sourcing, test, compliance, and field evidence.</li>
+        <li>Multi-board split detection using the daughter-board pattern table.</li>
+        <li>CAD workflow support through STEP and glTF exports, metadata reads, and reviewed writeback where supported.</li>
+        <li>Signed generation traces covering spec, engine, rule, corpus, component, artifact, and evidence versions.</li>
+        <li><code>ReadinessProofReport</code> for supported workflows.</li>
+        <li>Adapter contracts for long-running simulator and GPU jobs, with unavailable providers blocked until configured.</li>
+        <li>Air, ground, and water domain packs built on the shared Sture core.</li>
       </ul>
     </section>
 
@@ -358,7 +366,7 @@
         <input type="hidden" value="Sture Complete" name="metadata__product" />
         <button type="submit">Notify me at launch</button>
       </form>
-      <p class="footer">Built in Australia, with sovereign capability and local supply chains in mind, for the teams designing the next generation of autonomous air, ground, and water systems. &nbsp;·&nbsp; Sture is a product of <a href="/">Leva Nu Pty Ltd</a>.</p>
+      <p class="footer">Built in Australia for teams developing autonomous machines across air, ground, and water. &nbsp;·&nbsp; Sture is a product of <a href="/">Leva Nu Pty Ltd</a>.</p>
     </section>
 
   </main>
